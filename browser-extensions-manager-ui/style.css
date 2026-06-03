@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Figtree:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root {
+    /* Colors */
+    /* Neutral */
+    --Neutral-900: hsl(227, 75%, 14%);
+    --Neutral-800: hsl(226, 25%, 17%);
+    --Neutral-700: hsl(225, 23%, 24%);
+    --Neutral-600: hsl(226, 11%, 37%);
+    --Neutral-300: hsl(0, 0%, 78%);
+    --Neutral-200: hsl(217, 61%, 90%);
+    --Neutral-100: hsl(0, 0%, 93%);
+    --Neutral-0: hsl(200, 60%, 99%);
+    /* Red */
+    --Red-400: hsl(3, 86%, 64%);
+    --Red-500: hsl(3, 71%, 56%);
+    --Red-700: hsl(3, 77%, 44%);
+
+    /* Font Weights */
+    --Weight-4: 400;
+    --Weight-5: 500;
+    --Weight-6: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(180deg, #040918 0%, #091540 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Noto Sans',sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+}
+.body-light-mode {
+    background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+}
+
+/* header page */
+header {
+    width: 85%;
+    margin-bottom: 1.5rem;
+}
+/* part head */
+.header {
+    background-color: var(--Neutral-800);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.header-light-mode {
+    background-color: var(--Neutral-0);
+}
+
+.switch-mode {
+    background-image: url('/assets/images/icon-sun.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+    background-color: var(--Neutral-700);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 20px;
+}
+.switch-mode:hover {
+    background-color: var(--Neutral-600);
+}
+
+.switch-mode-light {
+    background-image: url('/assets/images/icon-moon.svg');
+    background-color: var(--Neutral-100);
+}
+.switch-mode-light:hover {
+    background-color: var(--Neutral-300);
+}
+
+.text-color-logo {
+    fill: hsl(227, 75%, 14%);
+    color: var(--Neutral-900);
+}
+
+/* part bottom */
+nav,
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Neutral-100);
+}
+nav {
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-right: 10px;
+}
+nav ul li button {
+    background-color: var(--Neutral-700);
+    color: var(--Neutral-100);
+    padding: 7px 14px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+nav ul li button:hover {
+    background-color: var(--Neutral-600);
+}
+.nav-light-mode {
+    background-color: var(--Neutral-0);
+    border: 1px solid var(--Neutral-300);
+    color: var(--Neutral-900);
+    box-shadow: 2px 2px 2px var(--Neutral-300);
+}
+.nav-light-mode:hover {
+    background-color: var(--Neutral-100);
+    color: var(--Neutral-700);
+}
+
+/* page content */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 85%;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.card {
+    background-color: var(--Neutral-800);
+    border-radius: 10px;
+    border: 1px solid var(--Neutral-600);
+    width: 100%;
+    height: 220px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-light-mode {
+    background-color: var(--Neutral-0);
+    border: 1px solid var(--Neutral-300);
+}
+.card-head {
+    display: flex;
+}
+.card-head img {
+    margin-right: 15px;
+    margin-bottom: auto;
+}
+.card-head h3 {
+    font-weight: var(--Weight-6);
+    color: var(--Neutral-0);
+}
+
+.card-head-light {
+    color: var(--Neutral-800) !important;
+}
+
+.card-head p {
+    color: var(--Neutral-300);
+    font-size: 14px;
+}
+.subtitle-light {
+    color: var(--Neutral-600) !important;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.card-bottom button {
+    padding: 0 15px;
+    border: 1px solid var(--Neutral-600);
+    border-radius: 15px;
+    font-weight: var(--Weight-5);
+    color: var(--Neutral-100);
+    background-color: var(--Neutral-800);
+}
+.card-bottom button:hover {
+    background-color: var(--Red-500);
+    color: var(--Neutral-900);
+    border: none;
+}
+
+nav ul li button.active-filter {
+    background-color: var(--Red-700); 
+    color: var(--Neutral-0);
+}
+.nav-light-mode.active-filter {
+    background-color: var(--Red-700);
+    border: 1px solid var(--Red-700);
+    color: var(--Neutral-0);
+    box-shadow: none;
+}
+
+.btnRemove-lightMode {
+    background-color: var(--Neutral-0) !important;
+    border-color: var(--Neutral-300) !important;
+    color: var(--Neutral-800) !important;
+}
+.btnRemove-lightMode:hover {
+    background-color: var(--Red-500) !important;
+    color: var(--Neutral-0) !important;
+}
+
+.card-bottom .form-check {
+    align-self: center;
+}
+
+/* style button switch */
+.form-check-input.form-check-input-lg {
+    cursor: pointer;
+    background-color: var(--Neutral-600);
+    width: 3em;
+    height: 1.5em;
+    box-shadow: none;
+    border: none;
+}
+.btn-switch-light {
+    background-color: var(--Neutral-300) !important;
+}
+.btn-switch-light:checked {
+    background-color: var(--Red-700) !important;
+}
+.btn-switch-light:is(:checked):hover {
+    background-color: var(--Red-400) !important;
+}
+
+/* state on */
+.form-check-input:checked {
+    background-color: var(--Red-700);
+    border: none;
+}
+/* state off */
+.form-check-input:not(:checked) {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+@media(max-width: 768px) {
+    body {
+        margin-bottom: 10%;
+    }
+    nav,
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    nav {
+        margin-top: 10%;
+    }
+}

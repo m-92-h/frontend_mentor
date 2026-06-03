@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+body {
+    font-family: "Overpass", sans-serif;
+}
+
+nav {
+    background-image: url("../assets/images/bg-pattern-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center right -15rem;
+    background-size: 120%;
+}
+@media (max-width: 768px) {
+    nav {
+        background-image: url("../assets/images/bg-pattern-intro-mobile.svg");
+    }
+}
+
+/* public color */
+.gradient-intro {
+    background: linear-gradient(135deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+}
+.gradient-body {
+    background: linear-gradient(180deg, hsl(237, 17%, 21%), hsl(237, 23%, 31%));
+}
+
+/* Desktop Dropdown Styles */
+.dropdown-menu {
+    display: none;
+}
+.dropdown-menu.active {
+    display: block;
+}
+.dropdown-btn::after,
+.offcanvas-item > button::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    margin-left: 8px;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
+.dropdown-btn.active::after,
+.offcanvas-item > button.active::after {
+    transform: rotate(-135deg);
+}
+
+/* Mobile Dropdown Styles */
+/* Offcanvas Styles */
+.offcanvas-overlay {
+    /* من خلال اعطاء القيم جميعها صفر يتم حجز مساحة بعرض الشاشة كاملة لتوفير مساحة لظهور القائمة */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 40;
+}
+.offcanvas-overlay.active {
+    display: block;
+}
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* هنا تم تحديد عرض القائمة التي تظهر فوق offcanvas-overlay */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 50;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+.offcanvas-menu.active {
+    right: 0;
+}
+.offcanvas-header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+.offcanvas-body {
+    padding: 1rem;
+}
+.offcanvas-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+.offcanvas-item > button {
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    color: hsl(207, 13%, 34%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.offcanvas-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.offcanvas-submenu.active {
+    max-height: 500px;
+}
+.offcanvas-submenu a {
+    display: block;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    color: hsl(207, 13%, 34%);
+    font-size: 0.875rem;
+}
+.offcanvas-submenu a:hover {
+    color: hsl(208, 49%, 24%);
+}
+
+
+/* styles link front-end mentor and my profile */
+.attribution {
+    font-size: 14px;
+    text-align: center;
+}
+.attribution a {
+    color: transparent;
+    background-image: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-clip: text;
+    margin-right: 1rem;
+}

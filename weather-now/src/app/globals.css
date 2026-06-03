@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+    --color-neutral-900: var(--neutral-900);
+    --color-neutral-800: var(--neutral-800);
+    --color-neutral-700: var(--neutral-700);
+    --color-neutral-300: var(--neutral-300);
+    --color-neutral-200: var(--neutral-200);
+    --color-neutral-0: var(--neutral-0);
+
+    --color-orange-500: var(--orange-500);
+    --color-blue-500: var(--blue-500);
+    --color-blue-700: var(--blue-700);
+
+    --font-sans: "DM Sans", ui-sans-serif, system-ui;
+    --font-heading: "Bricolage Grotesque", sans-serif;
+}
+
+:root,
+[data-theme="theme1"] {
+    --neutral-900: hsl(0, 0%, 100%);
+    --neutral-0: hsl(243, 96%, 9%);
+    --neutral-800: hsl(240, 6%, 70%);
+    --neutral-700: hsl(243, 23%, 30%);
+    --neutral-300: hsl(243, 23%, 24%);
+    --neutral-200: hsl(243, 27%, 20%);
+    --orange-500: hsl(32, 100%, 60%);
+    --blue-500: hsl(233, 67%, 56%);
+    --blue-700: hsl(248, 70%, 46%);
+}
+
+[data-theme="theme2"] {
+    --neutral-900: hsl(243, 96%, 9%);
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-800: hsl(243, 27%, 20%);
+    --neutral-700: hsl(243, 23%, 24%);
+    --neutral-300: hsl(240, 6%, 70%);
+    --neutral-200: hsl(250, 6%, 84%);
+    --orange-500: hsl(28, 100%, 52%);
+    --blue-500: hsl(233, 67%, 56%);
+    --blue-700: hsl(248, 70%, 36%);
+}
+
+@layer base {
+    body {
+        @apply bg-neutral-0 text-neutral-900 font-sans transition-colors duration-300 antialiased;
+        font-size: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-heading font-bold tracking-tight;
+    }
+
+    input[type="search"] {
+        @apply appearance-none;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            @apply appearance-none m-0;
+        }
+    }
+
+    button,
+    input,
+    select {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50;
+    }
+}
+
+@layer utilities {
+    .scrollbar-custom {
+        &::-webkit-scrollbar {
+            @apply w-2 h-2;
+        }
+        &::-webkit-scrollbar-track {
+            @apply bg-neutral-300 rounded-lg;
+        }
+        &::-webkit-scrollbar-thumb {
+            @apply bg-neutral-800/40 rounded-lg border border-solid border-neutral-700/40;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            @apply bg-neutral-800 cursor-grab;
+        }
+        &::-webkit-scrollbar-thumb:active {
+            @apply scale-95 cursor-grabbing;
+        }
+    }
+}
+
+.currentWeatherHeader {
+    background-image: url("/images/bg-today-small.svg");
+}
+
+@media (min-width: 768px) {
+    .currentWeatherHeader {
+        background-image: url("/images/bg-today-large.svg");
+    }
+}

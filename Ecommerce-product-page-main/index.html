@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+<body>
+
+    <div class="modal fade" id="productLightbox" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content lightbox-content bg-transparent border-0 shadow-none">
+          <div class="modal-header border-0 pb-0 d-flex justify-content-end">
+            <button type="button" class="btn-close-lightbox" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.599 4.599-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.499.282 2.903 2.404.782l4.595 4.596L11.596.782Z" fill="#FFF" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+          <div class="modal-body pt-0">
+            <div class="lightbox-gallery">
+                <div class="main-image-lightbox-container position-relative">
+                    <img id="lightboxMainImage" class="img-fluid rounded-4" src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
+                    <button id="lightboxPrevBtn" class="lightbox-nav-btn prev-btn">
+                        <img src="./images/icon-previous.svg" alt="Previous">
+                    </button>
+                    <button id="lightboxNextBtn" class="lightbox-nav-btn next-btn">
+                        <img src="./images/icon-next.svg" alt="Next">
+                    </button>
+                </div>
+                
+                <div class="d-flex justify-content-center mt-4 thumbnail-container-lightbox">
+                    <img data-index="1" class="rounded-4 thumbnail-lightbox active-thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+                    <img data-index="2" class="rounded-4 thumbnail-lightbox" src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+                    <img data-index="3" class="rounded-4 thumbnail-lightbox" src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+                    <img data-index="4" class="rounded-4 thumbnail-lightbox" src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <header class="container px-0 px-md-5">
+        <nav class="navbar my-3 py-4">
+            <div class="container-fluid px-0 px-md-0 d-flex justify-content-between align-items-center">
+                
+                <div class="d-flex align-items-center">
+                    <button class="btn menu-btn d-md-none me-3" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"><img src="./images/icon-menu.svg" alt="Menu"></button>
+                    <a class="navbar-brand me-5 logo-brand" href="#"><img src="./images/logo.svg" alt="Sneakers Logo"></a>
+                </div>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-none d-md-flex flex-row text-secondary nav-links">
+                  <li class="nav-item"><a class="nav-link" href="#">Collections</a></li>
+                  <li class="nav-item"><a class="nav-link mx-3" href="#">Men</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+                  <li class="nav-item"><a class="nav-link mx-3" href="#">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                  <div class="cart-icon-container me-4 position-relative" id="cartToggle">
+                      <img class="cart-icon" src="./images/icon-cart.svg" alt="Cart icon">
+                      <span id="cartCount" class="cart-count-badge"></span>
+                  </div>
+                  <img class="avatar-img" src="./images/image-avatar.png" alt="User Avatar">
+                </div>
+
+            </div>
+          </nav>
+
+          <div id="cartDropdown" class="cart-dropdown shadow-lg d-none">
+                <p class="cart-header fw-bold border-bottom pb-3 px-4 mb-0">Cart</p>
+                <div id="cartContent" class="cart-body p-4 text-center text-secondary">
+                    Your cart is empty.
+                </div>
+          </div>
+          
+          <hr class="nav-divider mx-0 d-none d-md-block">
+    </header>
+    
+    <div class="offcanvas offcanvas-start w-75" data-bs-scroll="true" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav mobile-nav-links">
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">Collections</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">Men</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">Women</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <main class="container product-page-main my-md-5">
+      <div class="row product-row">
+        <div class="col-12 col-md-6 image-gallery-col px-0 px-md-5">
+          <div class="main-image-container position-relative">
+            <img id="mainProductImage" class="img-fluid main-product-image d-md-block rounded-4" src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" data-bs-toggle="modal" data-bs-target="#productLightbox">
+            <button id="prevBtn" class="mobile-nav-btn prev-btn d-md-none">
+                <img src="./images/icon-previous.svg" alt="Previous">
+            </button>
+            <button id="nextBtn" class="mobile-nav-btn next-btn d-md-none">
+                <img src="./images/icon-next.svg" alt="Next">
+            </button>
+          </div>
+          
+          <div class="d-flex justify-content-between mt-4 thumbnail-container d-none d-md-flex">
+            <img data-index="1" class="rounded-4 thumbnail active-thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1">
+            <img data-index="2" class="rounded-4 thumbnail" src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2">
+            <img data-index="3" class="rounded-4 thumbnail" src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3">
+            <img data-index="4" class="rounded-4 thumbnail" src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4">
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 product-details-col p-4 p-md-5">
+          <p class="company-name text-uppercase fw-bold">Sneaker Company</p>
+          <h1 class="product-title display-5 fw-bold mb-4">Fall Limited Edition Sneakers</h1>
+          <p class="product-description my-4 text-secondary">
+            These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+          
+          <div class="price-section d-flex d-md-block align-items-center justify-content-between mb-4">
+              <div class="d-flex align-items-center">
+                  <h4 class="current-price me-3">$125.00</h4>
+                  <span class="discount-badge fw-bold">50%</span>
+              </div>
+              <p class="original-price text-secondary text-decoration-line-through mb-0">$250.00</p>
+          </div>
+          
+          <div class="d-block d-md-flex align-items-center action-buttons-container">
+            <div class="quantity-control d-flex justify-content-between rounded-3 mb-3 mb-md-0 me-md-3">
+              <button id="minusBtn" class="btn quantity-btn minus-btn"><img src="./images/icon-minus.svg" alt="Minus"></button>
+              <span id="quantityValue" class="quantity-value fw-bold">0</span>
+              <button id="plusBtn" class="btn quantity-btn plus-btn"><img src="./images/icon-plus.svg" alt="Plus"></button>
+            </div>
+            
+            <button id="addToCartBtn" class="btn add-to-cart-btn fw-bold shadow-sm">
+              <img class="me-3" src="./images/icon-cart.svg" alt="Cart">
+              <span>Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

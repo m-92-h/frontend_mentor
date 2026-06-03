@@ -1,0 +1,115 @@
+body {
+    background-image: url('../../assets/home/background-home-desktop.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+}
+
+/* left side */
+.info h2,
+.info h1,
+.explore p {
+    text-transform: uppercase;
+}
+.info h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.info h1 {
+    font-size: 10rem;
+    font-weight: bold;
+    line-height: 1;
+    /* margin: 1rem 0; */
+}
+.info p {
+    text-align: justify;
+    font-size: 1.2rem;
+    width: 29.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.info {
+    padding-left: 5rem;
+}
+
+/* Right side */
+.explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.explore-btn {
+    text-decoration: none;
+    display: inline-block;
+}
+.explore p {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 5em 3.7em;
+    border-radius: 50%;
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+.explore p:hover {
+    opacity: .8;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('../../assets/home/background-home-tablet.jpg');
+    }
+    main:first-child {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .info {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .info h2 {
+        font-size: 1.3rem;
+    }
+    .info h1 {
+        font-size: 8rem;
+    }
+    .info p {
+        text-align: center;
+        width: 100%;
+        padding-top: 15px;
+    }
+    .explore {
+        margin: 2rem auto;
+    }
+    .explore p {
+        padding: 4em 2.7em;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        background-image: url('../../assets/home/background-home-mobile.jpg');
+    }
+    .info h2 {
+        font-size: 1rem;
+    }
+    .info h1 {
+        font-size: 4rem;
+    }
+    .info p {
+        font-size: 1rem;
+    }
+    .explore p {
+        padding: 3em 2em;
+        font-size: 1rem;
+    }
+}

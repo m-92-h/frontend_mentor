@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/pages/login&sign-up.css" />
+        <title>Entertainment web app</title>
+        <style>
+            main {
+                height: 95vh;
+            }
+            .card-body {
+                height: 70vh;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="card">
+                <div class="card-header"><img src="./assets/logo.svg" /></div>
+                <div class="card-body">
+                    <h1>Sign Up</h1>
+                    <form>
+                        <div class="box-validation">
+                            <input type="email" placeholder="Email address" id="email" />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="box-validation">
+                            <input type="password" placeholder="Password" id="password" />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="box-validation">
+                            <input type="password" placeholder="Repeat password" id="RepeatPassword" />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <input type="submit" value="Create an account" />
+                        <div class="text">
+                            <p>
+                                Already have an account? <span><a href="./login.html">Login</a></span>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            const form = document.querySelector("form");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const RepeatPassword = document.getElementById("RepeatPassword");
+            const errorMsgs = document.querySelectorAll(".invalid-feedback");
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let formIsValid = true;
+                const emailValue = email.value.trim();
+                const passwordValue = password.value.trim();
+                const RepeatPasswordValue = RepeatPassword.value.trim(); // متغير قيمة التكرار
+
+                // ------------------------ ckeck Email ------------------------------
+                // if fild => empty
+                if (emailValue === "") {
+                    errorMsgs[0].textContent = "The field is empty.";
+                    email.classList.add("is-invalid");
+                    email.classList.remove("is-valid");
+                    formIsValid = false;
+                } else if (!emailRegex.test(emailValue)) {
+                    // 2. if fild is not validation
+                    errorMsgs[0].textContent = "Email is not validation";
+                    email.classList.add("is-invalid");
+                    email.classList.remove("is-valid");
+                    formIsValid = false;
+                } else {
+                    // 3. if fild is validation
+                    errorMsgs[0].textContent = "";
+                    email.classList.remove("is-invalid");
+                    email.classList.add("is-valid");
+                }
+
+                // ------------------------- check password ---------------------------
+                if (passwordValue === "") {
+                    // if fild => empty
+                    errorMsgs[1].textContent = "The field is empty.";
+                    password.classList.add("is-invalid");
+                    password.classList.remove("is-valid");
+                    formIsValid = false;
+                } else {
+                    // if fild is validation
+                    errorMsgs[1].textContent = "";
+                    password.classList.remove("is-invalid");
+                    password.classList.add("is-valid");
+                }
+
+                // ------------------------- check RepeatPassword ---------------------------
+                if (RepeatPasswordValue === "") {
+                    // if fild => empty
+                    errorMsgs[2].textContent = "The field is empty.";
+                    RepeatPassword.classList.add("is-invalid");
+                    RepeatPassword.classList.remove("is-valid");
+                    formIsValid = false;
+                } else if (RepeatPasswordValue !== passwordValue) {
+                    // if repeat password value not equal old Password Value
+                    errorMsgs[2].textContent = "Repeat Password is not equal old Password";
+                    RepeatPassword.classList.add("is-invalid");
+                    RepeatPassword.classList.remove("is-valid");
+                    formIsValid = false;
+                } else {
+                    // if fild is validation
+                    errorMsgs[2].textContent = "";
+                    RepeatPassword.classList.remove("is-invalid");
+                    RepeatPassword.classList.add("is-valid");
+                }
+
+                if (formIsValid) {
+                    form.submit();
+                    localStorage.setItem("isSignUp", "true");
+                    window.location.href = "index.html";
+                }
+            });
+        </script>
+    </body>
+</html>

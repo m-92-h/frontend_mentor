@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* add line for navbar side */
+hr {
+    background-image: linear-gradient(to right, rgba(85, 76, 76, 0.445), rgba(97, 91, 91, 0.534));
+    width: 24rem;
+    height: 4px;
+    border: none;
+}
+/* ======================= */
+
+nav ul {
+    background-image: linear-gradient(to right, rgba(97, 91, 91, 0.534), rgba(34, 28, 28, 0.445));
+}
+nav ul li:last-child {
+    padding-right: 6rem;
+}
+nav ul li a {
+    color: white !important;
+    text-transform: uppercase;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid white;
+}
+
+.navbar-brand img {
+    width: 70%;
+}
+.navbar-nav {
+    padding-left: 1.5rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+    margin-right: 2rem;
+}
+.navbar-toggler-dark {
+    background-image: url("../assets/shared/icon-hamburger.svg");
+}
+.number-link {
+    color: rgba(219, 210, 210, 0.952);
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        width: 60px;
+    }
+    .line-navbar {
+        display: none;
+    }
+    .navbar-brand {
+        padding-left: 3rem;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding-left: 2rem;
+    }
+}
+@media (max-width: 500px) {
+    .navbar-brand img {
+        width: 45px;
+    }
+}

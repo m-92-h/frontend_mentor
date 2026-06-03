@@ -1,0 +1,161 @@
+:root {
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --blue-950: hsl(223, 30%, 9%);
+    --blue-900: hsl(223, 36%, 14%);
+    --blue-500: hsl(223, 23%, 46%);
+    --red-500: hsl(0, 97%, 63%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--blue-950);
+    font-family: 'Arial', Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 30%;
+    height: 90vh;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.card-body {
+    background-color: var(--blue-900);
+    padding: 20px;
+    border-radius: 15px;
+    height: 60vh;
+}
+
+h1 {
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: var(--white);
+}
+h1:hover {
+    cursor: default;
+}
+
+.card-body form {
+    margin-top: 2em;
+}
+
+input {
+    width: 90%;
+    margin: 10px;
+    border: none;
+    background-color: var(--blue-900);
+    border-bottom: 2px solid var(--blue-500);
+    height: 35px;
+    color: var(--white);
+    padding-left: 15px;
+    font-size: 16px;
+}
+input::placeholder {
+    position: absolute;
+    top: 0;
+}
+input:focus {
+    outline: none;
+}
+input[type="password"]::-ms-reveal {
+    filter: invert(100%);
+}
+
+input[type="submit"] {
+    background-color: var(--red-500);
+    color: var(--white);
+    border-radius: 6px;
+    border: none;
+    padding: 10px 0;
+    width: 90%;
+    margin-top: 2em;
+    font-size: 16px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    opacity: .9;
+    border: 1px solid var(--white);
+    padding: 9px 0;
+}
+input[type="password"] {
+    margin-top: 30px;
+}
+
+.box-validation {
+    position: relative;
+}
+.invalid-feedback {
+    color: var(--red-500);
+    font-size: 14px;
+    position: absolute;
+    top: 88%;
+    left: 5%;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    color: var(--white);
+    font-size: 15px;
+}
+p a {
+    text-decoration: none;
+    color: var(--red-500);
+}
+p a:hover {
+    color: var(--blue-500);
+    transition: all .2s ease;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 85%;
+        height: 95vh;
+    }
+    
+    .card-body {
+        border-radius: 10px;
+        height: 65vh;
+    }
+    
+    .card-body form {
+        gap: 10px;
+        margin-top: 2rem;
+    }
+    
+    input {
+        height: 30px;
+    }
+    input::placeholder {
+        font-size: 15px;
+    }
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 0;
+    }
+    .invalid-feedback {
+        font-size: 12px;
+    }
+    p {
+        font-size: 14px;
+    }
+}

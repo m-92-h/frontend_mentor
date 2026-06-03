@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,500;1,500&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,500;1,500&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+
+* {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    font-family: "Barlow", sans-serif !important;
+}
+
+.text-header-custom {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+
+.logo-custom {
+    cursor: pointer;
+}
+.logo-custom:hover path {
+    fill: #ffffff;
+    transition: fill 0.4s ease;
+}
+
+/* All style navbar for screen mobile */
+.menu {
+    position: fixed;
+    top: 75px;
+    left: 25px;
+    width: 90%;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* 1. Set the menu to the default hidden state */
+    opacity: 0;
+    visibility: hidden;
+}
+/* 2. Create a class to show on click (will be added in JavaScript) */
+.menu-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.menu-button-mobile::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 28px solid transparent;
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid #ffffff;
+    position: absolute;
+    top: -3.5em;
+    right: 1.01em;
+}
+.menu-button-mobile {
+    width: 90%;
+    text-align: center;
+    background-color: white;
+}
+.menu-button-mobile > li {
+    margin-top: 8px !important;
+    color: hsl(213, 9%, 39%);
+    list-style-type: none;
+}
+.last-child-menu-mobile {
+    background-color: hsl(51, 100%, 49%);
+    padding: 5px 20px !important;
+    margin: 10px 0 !important;
+    width: fit-content;
+    font-weight: 600;
+}
+
+/* All style navbar for screen desktop */
+.menu-button-desktop {
+    list-style-type: none;
+    cursor: pointer;
+}
+.menu-button-desktop > li {
+    margin-right: 2rem !important;
+    color: #ffffff;
+}
+.last-child-menu-desktop {
+    background-color: #ffffff;
+    padding: 5px 15px !important;
+    color: black !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+.last-child-menu-desktop:hover {
+    background-color: hsla(197, 26%, 53%, 0.151);
+    color: #ffffff !important;
+}
+
+/* style for image arrow down and move animation */
+.image-arrow-down {
+    animation: move 1s ease 0.1s infinite normal both;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+
+/* style section one */
+h4,
+.text-header-custom,
+.text-custom {
+    font-family: "Fraunces", serif;
+}
+.text-custom {
+    cursor: pointer;
+}
+.text-shadow {
+    z-index: -1;
+    position: absolute;
+    left: 4.5rem;
+    top: 50%;
+    background-color: hsl(51, 100%, 49%);
+    width: 8em;
+    height: 10px;
+}
+@media (min-width: 768px) {
+    .text-shadow,
+    .text-shadow-two {
+        left: -0.5rem !important;
+    }
+}
+
+/* style section two */
+.text-shadow-two {
+    z-index: -1;
+    position: absolute;
+    left: 4.5rem;
+    top: 50%;
+    width: 8em;
+    height: 10px;
+    background-color: hsl(7, 99%, 70%);
+}
+
+/* style section three */
+.text-Graphic-design,
+.text-Photography {
+    text-align: center;
+    top: 20rem;
+    left: 1rem;
+    margin: 0 10px !important;
+    font-weight: 500;
+    color: hsl(167, 40%, 24%);
+}
+.text-Graphic-design > h1,
+.text-Photography > h1 {
+    font-family: "Fraunces", serif;
+    font-weight: bold;
+    margin-bottom: 2rem !important;
+    margin-top: 3rem !important;
+}
+
+.text-Photography {
+    color: hsl(198, 62%, 26%);
+}
+
+@media (min-width: 768px) {
+    .text-Photography > p,
+    .text-Graphic-design > p {
+        margin: 0 5rem !important;
+    }
+    .text-Graphic-design,
+    .text-Photography {
+        top: 13rem;
+    }
+}
+
+/* style section four */
+.text-Client-testimonials {
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem !important;
+    color: hsl(213, 9%, 39%);
+}
+.images-people {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+}
+.card-title {
+    font-family: "Fraunces", serif;
+}
+.text-subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px !important;
+    color: hsl(210, 4%, 67%);
+}
+
+/* style footer */
+footer {
+    background-color: hsl(167, 34%, 41%);
+}
+ul > li {
+    list-style-type: none;
+}
+li > a {
+    text-decoration: none;
+    color: hsl(167, 40%, 24%);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+li > a:hover {
+    color: hsl(0, 100%, 100%);
+}
+
+.footer-social-icons li svg:hover path {
+    fill: hsl(0, 100%, 100%);
+    transition: fill 0.3s ease;
+}

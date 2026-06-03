@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+    --Linear-gradient-to: hsl(249, 99%, 64%);
+    --Linear-gradient: hsl(278, 94%, 30%);
+    --Red-400: hsl(0, 100%, 66%);
+    --White: hsl(0, 100%, 100%);
+    --Gray-200: hsl(270, 3%, 87%);
+    --Gray-400: hsl(212, 12%, 71%);
+    --Purple-950: hsl(278, 68%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+}
+
+.part-lift {
+    background-image: url("./assets/bg-main-desktop.png");
+    max-width: 35%;
+    position: relative;
+    min-height: 100vh;
+}
+.part-right {
+    max-width: 65%;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.card-front {
+    position: absolute;
+    left: 30%;
+    top: 12%;
+    background-image: url("./assets/bg-card-front.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 28rem;
+    height: 15.5rem;
+    color: var(--White);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-number {
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    margin-top: 2rem !important;
+    margin-bottom: 0 !important;
+}
+
+.bottom-card-front {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.card-holder-name {
+    font-size: 0.9rem;
+    margin-bottom: 0 !important;
+}
+.card-exp-date {
+    margin-bottom: 0 !important;
+}
+
+.card-back {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    background-image: url("./assets/bg-card-back.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 28rem;
+    height: 15.5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.card-cvc {
+    color: var(--White);
+    font-size: 0.9rem;
+    margin-top: 10px !important;
+    margin-right: 2rem !important;
+}
+
+.card-form-container {
+    width: 380px;
+    padding: 0 20px !important;
+}
+
+.form-label-custom {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--Purple-950);
+    margin-bottom: 0.4rem !important;
+}
+
+.form-control-custom:focus {
+    border-color: var(--Linear-gradient-to);
+    box-shadow: 0 0 0 0.25rem rgba(132, 70, 234, 0.25);
+}
+.form-control-custom::placeholder {
+    color: var(--Gray-400);
+}
+.form-control {
+    background-image: none !important;
+}
+input:hover {
+    cursor: pointer;
+}
+.message-error {
+    font-size: 12px;
+    color: var(--Red-400);
+}
+
+.page-complete {
+    width: 380px;
+    padding: 0 20px !important;
+}
+.page-complete p {
+    color: var(--Gray-400);
+}
+.btn-custom {
+    margin-top: 2em !important;
+    padding: 10px 8em !important;
+    border: none;
+    border-radius: 8px;
+    color: var(--White);
+    background-image: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    transition: background-color 0.3s;
+}
+.btn-custom:hover {
+    background-color: hsl(278, 68%, 25%);
+}
+
+@media (max-width: 1200px) {
+    .part-lift {
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .part-lift {
+        max-width: 100%;
+        min-height: 43vh;
+        background-image: url("./assets/bg-main-mobile.png");
+    }
+    .part-right {
+        max-width: 100%;
+        min-height: auto;
+        padding-top: 8rem !important;
+    }
+
+    .card-front {
+        left: 5%;
+        top: 52%;
+        width: 18rem;
+        height: 10.5rem;
+        padding: 1rem;
+        z-index: 10;
+    }
+    .card-number {
+        font-size: 1rem;
+        margin-top: 1rem !important;
+    }
+    .card-holder-name,
+    .card-exp-date {
+        font-size: 0.8rem;
+    }
+
+    .card-back {
+        left: 18%;
+        top: 14%;
+        width: 18rem;
+        height: 10.5rem;
+        padding: 1rem;
+        z-index: 9;
+    }
+    .card-cvc {
+        font-size: 0.8rem;
+        margin-top: 5px !important;
+        margin-right: 1rem !important;
+    }
+    .card-form-container {
+        width: 90%;
+        max-width: 380px;
+    }
+    .page-complete {
+        width: 90%;
+        max-width: 380px;
+    }
+}

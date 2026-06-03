@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+    --font-main: "League Spartan", sans-serif;
+    --text-numbers: 32px;
+
+    /* Layout Backgrounds */
+    --color-main-bg: var(--bg-main);
+    --color-keypad-bg: var(--bg-keypad);
+    --color-screen-bg: var(--bg-screen);
+
+    /* Functional Keys (e.g., DEL, RESET) */
+    --color-key-func: var(--key-func-bg);
+    --color-key-func-shadow: var(--key-func-shadow);
+
+    /* Accent Keys (e.g., Equals, Toggle) */
+    --color-key-accent: var(--key-accent-bg);
+    --color-key-accent-shadow: var(--key-accent-shadow);
+
+    /* Number Keys */
+    --color-key-num: var(--key-num-bg);
+    --color-key-num-shadow: var(--key-num-shadow);
+
+    /* Text Colors */
+    --color-text-main: var(--text-primary);
+    --color-text-alt: var(--text-secondary);
+}
+
+/* --- Theme 1: Default Navy (Dark Blue) --- */
+:root, [data-theme="theme1"] {
+    /* Backgrounds */
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+
+    /* Key Colors & Shadows */
+    --key-func-bg: hsl(225, 21%, 49%);
+    --key-func-shadow: hsl(224, 28%, 35%);
+    --key-accent-bg: hsl(6, 63%, 50%);
+    --key-accent-shadow: hsl(6, 70%, 34%);
+    --key-num-bg: hsl(0, 0%, 90%);
+    --key-num-shadow: hsl(28, 16%, 65%);
+
+    /* Typography */
+    --text-primary: hsl(0, 100%, 100%);
+    --text-secondary: hsl(221, 14%, 31%);
+}
+
+/* --- Theme 2: Light Gray / Orange --- */
+[data-theme="theme2"] {
+    /* Backgrounds */
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+
+    /* Key Colors & Shadows */
+    --key-func-bg: hsl(185, 42%, 37%);
+    --key-func-shadow: hsl(185, 58%, 25%);
+    --key-accent-bg: hsl(25, 98%, 40%);
+    --key-accent-shadow: hsl(25, 99%, 27%);
+    --key-num-bg: hsl(0, 0%, 90%);
+    --key-num-shadow: hsl(35, 11%, 61%);
+
+    /* Typography */
+    --text-primary: hsl(60, 10%, 19%);
+    --text-secondary: hsl(0, 100%, 100%);
+}
+
+/* --- Theme 3: Deep Purple / Cyan --- */
+[data-theme="theme3"] {
+    /* Backgrounds */
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+
+    /* Key Colors & Shadows */
+    --key-func-bg: hsl(281, 89%, 26%);
+    --key-func-shadow: hsl(285, 91%, 52%);
+    --key-accent-bg: hsl(176, 100%, 44%);
+    --key-accent-shadow: hsl(177, 92%, 70%);
+    --key-num-bg: hsl(268, 47%, 21%);
+    --key-num-shadow: hsl(290, 70%, 36%);
+
+    /* Typography */
+    --text-primary: hsl(52, 100%, 62%);
+    --text-secondary: hsl(198, 20%, 13%);
+}
+
+body {
+    font-family: var(--font-main);
+    font-weight: 700;
+}
