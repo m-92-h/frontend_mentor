@@ -8,21 +8,21 @@ import Footer from "./components/Footer";
 import type { CSSProperties } from "react";
 
 export default function App() {
-    return (
-        <div style={styles}>
-            <Header />
-            <div className="text-center">
-                <Hero />
-                <Features />
-                <Productive />
-                <Testimonials />
-            </div>
-            <Footer />
-        </div>
-    );
+  return (
+    <div style={styles}>
+      <Header />
+      <div className="text-center">
+        <Hero />
+        <Features />
+        <Productive />
+        <Testimonials />
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 const styles: CSSProperties = {
-    backgroundColor: "hsl(218, 28%, 13%)",
-    height: "100vh !important",
+  backgroundColor: "hsl(218, 28%, 13%)",
+  height: "100vh !important",
 };
