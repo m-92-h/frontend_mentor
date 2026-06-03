@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+    --main-background: hsl(0, 0%, 99%);
+    --element-background: hsl(0, 100%, 100%);
+    --text-color: hsl(200, 15%, 8%);
+    --input-color: hsl(0, 0%, 50%);
+}
+
+.dark-mode {
+    --main-background: hsl(207, 26%, 17%);
+    --element-background: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 100%, 100%);
+    --input-color: hsl(209, 23%, 22%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    background-color: var(--main-background);
+}
+
+/* style navbar */
+nav {
+    background-color: var(--element-background);
+    box-shadow: 5px 0 5px var(--input-color);
+    color: var(--text-color);
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    z-index: 10;
+}
+.swich-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.icon-darkMode {
+    font-variation-settings:
+        "FILL" 1,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+}
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 24px;
+    }
+    .swich-mode h3 {
+        font-size: 16px;
+    }
+}
+@media (max-width: 450px) {
+    nav h1 {
+        font-size: 16px;
+    }
+    .swich-mode h3 {
+        font-size: 14px;
+    }
+}
+
+/* style content page */
+main {
+    padding: 0 3rem;
+    padding-top: 6rem;
+}
+
+/* style second navbar */
+.settings-search {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--element-background);
+    box-shadow: 0 0 5px var(--input-color);
+    border-radius: 5px;
+    width: 20rem;
+    padding: 0 10px;
+}
+input[type="search"] {
+    background-color: var(--element-background);
+    color: var(--text-color);
+    width: 90%;
+    font-size: medium;
+    padding: 10px 0;
+    outline: none;
+    border: none;
+}
+.settings-select {
+    box-shadow: 0 0 5px var(--input-color);
+    background-color: var(--element-background);
+    border-radius: 5px;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+}
+select {
+    background-color: var(--element-background);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    padding: 0 25px 0 15px;
+    font-size: medium;
+}
+
+/* styles all the cards */
+.container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+    gap: 4rem;
+}
+
+.card {
+    box-shadow: 0 0 5px var(--input-color);
+    background-color: var(--element-background);
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-image img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1rem 2rem;
+}
+.card-content h4 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.card-content p {
+    font-size: 15px;
+}
+.card-content p b {
+    font-size: 17px;
+}
+
+/* style design detail */
+.btn {
+    width: fit-content;
+}
+.btn button {
+    background-color: var(--element-background);
+    filter: drop-shadow(0 0 5px var(--input-color));
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    font-size: medium;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn button::before {
+    content: "←";
+    font-size: large;
+    font-weight: bold;
+    margin-right: 8px;
+}
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8rem;
+    margin-top: 4rem;
+}
+.image-flag img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    filter: drop-shadow(5px -5px 1px var(--input-color)) drop-shadow(-5px 5px 1px var(--input-color)) drop-shadow(5px 5px 1px var(--input-color)) drop-shadow(-5px -5px 1px var(--input-color));
+}
+
+.info-flag {
+    width: 40vw;
+    height: 300px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: var(--text-color);
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.info p,
+.border-countries-list span {
+    font-size: 16px;
+}
+.info p b,
+.border-countries-section h4 {
+    font-size: 20px;
+}
+.part-left,
+.part-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.border-countries-section {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.border-countries-section h4 {
+    width: 30%;
+}
+.border-countries-list {
+    width: 68%;
+}
+
+.border-country-btn {
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    margin: 2px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--element-background);
+    color: var(--text-color);
+    filter: drop-shadow(0 0 5px var(--input-color));
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-bottom: 5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+    .image-flag {
+        width: 100%;
+    }
+    .image-flag img {
+        width: 100%;
+    }
+    .info-flag {
+        width: 100%;
+    }
+    .border-countries-section {
+        margin: 10px 0;
+    }
+    .border-countries-section h4 {
+        width: 30%;
+    }
+    .border-countries-list {
+        width: 68%;
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        margin-bottom: 15rem;
+    }
+    .info {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .info p,
+    .border-countries-list span {
+        font-size: 14px;
+    }
+    .info p b,
+    .border-countries-section h4 {
+        font-size: 16px;
+    }
+    .border-countries-section {
+        margin: 20px 0 0 0;
+        display: grid;
+    }
+    .border-countries-section h4 {
+        width: fit-content;
+    }
+    .border-countries-list {
+        width: 100%;
+    }
+    .border-country-btn {
+        width: fit-content;
+        padding: 2.5px 5px;
+    }
+}

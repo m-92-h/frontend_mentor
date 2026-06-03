@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet" href="/style.css" />
+        <title>geofinder</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1 class="logo">Where in the world?</h1>
+                <div class="swich-mode">
+                    <span class="material-symbols-outlined icon-darkMode">dark_mode</span>
+                    <h3>Dark Mode</h3>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="content-page">
+                <div class="settings-search">
+                    <div class="search">
+                        <img src="./src/assets/icon-search-dark.svg" alt="icon_search" />
+                        <input type="search" placeholder="Search for a country..." id="searchInput" />
+                    </div>
+                    <div class="settings-select">
+                        <select>
+                            <option value="Filter by Region" selected disabled>Filter by Region</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container"></div>
+            </div>
+        </main>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>
