@@ -37,4 +37,4 @@ npm run dev
 
 ## Deployment
 
-Deployed on **Vercel** — [Live Demo](https://weather-now-wn.vercel.app)
+Deployed on **Vercel** — [Live Demo](https://weather-coral-psi.vercel.app/)
