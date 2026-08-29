@@ -22,7 +22,3 @@
 | **browser-extensions-manager-ui** | [🔗 GitHub](https://github.com/m-92-h/frontend_mentor/tree/main/browser-extensions-manager-ui) | [🌐 Live](https://browser-extensions-manager-ui-xi.vercel.app/) |
 | **multi-step-form** | [🔗 GitHub](https://github.com/m-92-h/frontend_mentor/tree/main/multi-step-form) | # |
 | **weather-now** | [🔗 GitHub](https://github.com/m-92-h/frontend_mentor/tree/main/weather-now) | [🌐 Live](https://weather-coral-psi.vercel.app/) |
-
----
-
-Made with ❤️ by [Mohamed](https://github.com/m-92-h)
